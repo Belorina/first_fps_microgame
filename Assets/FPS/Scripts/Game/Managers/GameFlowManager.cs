@@ -48,10 +48,10 @@ namespace Unity.FPS.Game
         {
             if (GameIsEnding)
             {
-                float timeRatio = 1 - (m_TimeLoadEndGameScene - Time.time) / EndSceneLoadDelay;
-                EndGameFadeCanvasGroup.alpha = timeRatio;
+                float timeRatio = 1 - (m_TimeLoadEndGameScene - Time.time) / EndSceneLoadDelay;         // le temps que taimerais attendre - (l heure que ca a commencer - le temps qu il est maintenant) / la dureee que ca prends en general;
+                EndGameFadeCanvasGroup.alpha = timeRatio;                   // fade away screen
 
-                AudioUtility.SetMasterVolume(1 - timeRatio);
+                AudioUtility.SetMasterVolume(1 - timeRatio);                // fade out musique
 
                 // See if it's time to load the end scene (after the delay)
                 if (Time.time >= m_TimeLoadEndGameScene)
